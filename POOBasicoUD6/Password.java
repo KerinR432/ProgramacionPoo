@@ -32,34 +32,37 @@ public class Password {
 
     //metodos
     public boolean esFuerte() {
-        String mayusculas = "ABCDFGHI";
-        String minusculas = "abcdfghi";
         int contador = 0;
         int contador2 = 0;
-        if (minusculasYMayusculas(mayusculas, contador, minusculas, contador2)) return true;
-        return longitudFuerte();
-    }
-
-    private boolean longitudFuerte() {
-        if (pasword.length() >= 10) {
+        if (minusculasYMayusculas(contador, contador2)) {
+            return true;
+        }
+        if (longitudFuerte()) {
             return true;
         }
         return false;
     }
 
-    private boolean minusculasYMayusculas(String mayusculas, int contador, String minusculas, int contador2) {
+    private boolean longitudFuerte() {
+        for (int i = 0; i < pasword.length(); i++) {
+            if (pasword.charAt(i) == '0' && pasword.charAt(i) == '9') {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    private boolean minusculasYMayusculas(int contador, int contador2) {
         for (int i = 0; i < longitud; i++) {
-            if (pasword.equals(mayusculas)) {
+            if (pasword.charAt(i) >= 'a' && pasword.charAt(i) <= 'z') {
                 contador++;
                 if (contador >= 2) {
                     return true;
                 }
             }
-            if (pasword.equals(minusculas)) {
-                contador++;
-                if (contador2 > 1) {
-                    return true;
-                }
+            if (pasword.charAt(i) >= 'A' && pasword.charAt(i) <= 'Z') {
+                contador2++;
             }
         }
         return false;
