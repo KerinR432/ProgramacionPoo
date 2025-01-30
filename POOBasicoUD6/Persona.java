@@ -1,53 +1,82 @@
 package POOBasicoUD6;
 
+import java.util.Random;
+
 public class Persona {
-    //atributos
-    private String dni;
-    //int[] nums
-    private Cuenta[] misCuentas;
 
-    public Persona(String dni) {
-        this.dni = dni;
-        misCuentas = new Cuenta[3];
+    private String nombre, dni;
+    private int edad;
+    private char sexo;
+    private double peso, altura;
 
+    public Persona() {
+        generarDNI();
     }
 
-    //GETTERS
-    public boolean getSoyMorozo() {
-        for (int i = 0; i < misCuentas.length; i++) {
-            if (misCuentas[i] != null) {
-                if (misCuentas[i].getSaldo() < 0) {
-                    return true;
-                }
-            }
+    public Persona(String nombre, int edad, char sexo) {
+        this.nombre = nombre;
+        this.edad = edad;
+        comprobarSexo(sexo);
+        generarDNI();
+        peso = 0;
+        altura = 0;
+    }
+
+    public Persona(String nombre, int edad, String dni, double peso, double altura, char sexo) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.dni = dni;
+        this.peso = peso;
+        this.altura = altura;
+        comprobarSexo(sexo);
+    }
+
+    public int calcularImc() {
+        int adecuado = 0;
+        double resultado = 0;
+        resultado = peso / (altura*altura);
+
+        if (resultado < 20) {
+            adecuado = -1;
+        }
+        if (resultado >= 20 || resultado <= 25) {
+            adecuado = 0;
+        }
+        if (resultado > 25) {
+            adecuado = 1;
+        }
+        return adecuado;
+    }
+
+    public static boolean esMayorDeEdad(int edad) {
+        if (edad > 18) {
+            return true;
         }
         return false;
     }
 
-    public Cuenta getUnaCuenta(int num) {
-        if (num<3){
-        return misCuentas[num];
+    private boolean comprobarSexo(char sexo) {
+       sexo=Character.toLowerCase(sexo);
+        if (sexo == 'H' || sexo == 'M') {
+            this.sexo=sexo;
+            return true;
         }
-        return null;
+        this.sexo='H';
+        return false;
     }
 
-    //SETTERS
-    public void setAñadirCuentas(Cuenta newCuenta) {
-        for (int i = 0; i < misCuentas.length; i++) {
-            if (misCuentas[i] == null) {
-                misCuentas[i] = newCuenta;
-                return;
-            }
+    public String toString() {
+        return "Tu nombre: " + nombre + " tu edad: " + edad + " tu peso y atura: "
+                + peso + " , " + altura +" DNI: "+dni+ " y tu sexo es: " + sexo;
+    }
+
+    private void generarDNI() {
+        Random random = new Random();
+        dni="";
+        dni += (char) (random.nextInt(('Z' + 1) - 'A') + 'A');
+        for (int i = 0; i < 8; i++) {
+            dni += random.nextInt(10);
         }
 
-    }
-    public String toString(){
-       String cadena="Dni: "+dni+" ";
-        for (int i = 0; i < misCuentas.length; i++) {
-            if (misCuentas[i]!=null){
-            cadena+=misCuentas[i].toString();
-            }
-        }
-        return cadena;
     }
 }
