@@ -5,10 +5,10 @@ public class Regalo {
     private double precio;
     private String descripcionR;
 
-    public Regalo() {
-        this.nombreRegalo = " ";
-        this.precio = 0;
-        this.descripcionR = " ";
+    public Regalo(String nombreRegalo,double precio,String descripcionR) {
+        this.nombreRegalo = nombreRegalo;
+        this.precio = precio;
+        this.descripcionR = descripcionR;
     }
 
 

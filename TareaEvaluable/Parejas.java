@@ -9,8 +9,8 @@ public class Parejas {
     public Parejas(Persona persona1, Persona persona2) {
         this.persona1 = persona1;
         this.persona2 = persona2;
-        regaloParaPersona1 = null;
-        regaloParaPersona2 = null;
+        regaloParaPersona1 = new Regalo(" ",0," ");
+        regaloParaPersona2 = new Regalo(" ",0," ");
     }
 
     //setters
