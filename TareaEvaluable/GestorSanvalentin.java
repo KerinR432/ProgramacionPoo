@@ -19,6 +19,7 @@ public class GestorSanvalentin {
         System.out.println(pareja.calcularCostoTotal());
         System.out.println(pareja.toString());
 
+
     }
 
 }
