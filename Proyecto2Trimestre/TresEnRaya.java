@@ -9,7 +9,12 @@ public class TresEnRaya {
     }
 
     public void mueveJugador1(int pos) {
-
+        if (movimientoValido(pos)) {
+            tablero[pos - 1][pos -1]  =(char) 'X';
+            DibujaTablero();
+        } else {
+            System.out.println("numero no valido escribre otro");
+        }
     }
 
     public void mueveJugador2(int pos) {
@@ -18,7 +23,7 @@ public class TresEnRaya {
 
     public boolean movimientoValido(int pos) {//averiguar si quedan movimiento válido...
         if (pos >= 1 && pos <= 9) {
-            if (tablero[(pos - 1) / 3][(pos - 1) % 3] == ' ') {
+            if (tablero[(pos - 1) / 3][(pos - 1) % 3] == 0) {
                 return true;
             }
             return false;
@@ -27,7 +32,14 @@ public class TresEnRaya {
     }
 
     public boolean quedanMovimientos() {
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero.length; j++) {
+                if (tablero[i][j] != ' ' ){
+                    return true;
+                }
 
+            }
+        }
         return false;
     }
 
