@@ -4,4 +4,6 @@ public class UsoDeFacultad {
     public static void main(String[] args) {
 
     }
+
 }
+
