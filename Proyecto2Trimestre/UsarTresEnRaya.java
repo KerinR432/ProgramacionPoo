@@ -33,7 +33,6 @@ public class UsarTresEnRaya {
                         System.out.println("mueve jugador 1");
                         pos1 = in.nextInt();
                         mueveJugador1(pos1);
-                        ;
                         if (ganaJugador1() == true) {
                             System.out.println("Has ganado!");
                             ganando1++;

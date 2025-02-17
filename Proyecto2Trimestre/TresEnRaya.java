@@ -9,6 +9,23 @@ public class TresEnRaya {
     }
 
     public void mueveJugador1(int pos) {
+        while (movimientoValido(pos)) {
+            tablero[(pos - 1) / 3][(pos - 1) % 3] = 1;
+            DibujaTablero();
+
+        }
+    }
+
+    public void mueveJugador2(int pos) {
+        if (movimientoValido(pos)) {
+            tablero[(pos - 1) / 3][(pos - 1) % 3] = 2;
+            DibujaTablero();
+        } else {
+            System.out.println("numero no valido escribre otro");
+        }
+    }
+
+    public void mueveOrdenador1(int pos) {
         if (movimientoValido(pos)) {
             tablero[(pos - 1) / 3][(pos - 1) % 3] = 1;
             DibujaTablero();
@@ -17,7 +34,7 @@ public class TresEnRaya {
         }
     }
 
-    public void mueveJugador2(int pos) {
+    public void mueveOrdenador2(int pos) {
         if (movimientoValido(pos)) {
             tablero[(pos - 1) / 3][(pos - 1) % 3] = 2;
             DibujaTablero();
@@ -114,6 +131,39 @@ public class TresEnRaya {
         }
         return false;
     }
+    public boolean ganadorOrdenador1() {
+        int Eganador1 = 0;
+        if (tablero[0][0] == 1 && tablero[0][1] == 1 && tablero[0][2] == 1) {
+            return true;
+        }
+        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) {
+            return true;
+        }
+        if (tablero[0][0] == 1 && tablero[0][1] == 1 && tablero[0][2] == 1) {
+            return true;
+        }
+        if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1) {
+            return true;
+        }
+        if (tablero[0][2] == 1 && tablero[1][1] == 1 && tablero[2][0] == 1) {
+            return true;
+        }
+        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) {
+            return true;
+        }
+        if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[2][1] == 1) {
+            return true;
+        }
+        if (tablero[2][0] == 1 && tablero[2][1] == 1 && tablero[2][2] == 1) {
+            return true;
+        }
+        if (tablero[1][0] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1) {
+            Eganador1++;
+            return true;
+        }
+        return false;
+
+    }
 
     public void DibujaTablero() {//mostramos el tablero
         System.out.println("-------------------");
@@ -126,7 +176,7 @@ public class TresEnRaya {
                 } else if (tablero[i][j] == 2) {
                     simbolo = 'O';
                     System.out.print("| " + simbolo + " ");
-                } else if (tablero[i][0] == 0) {
+                } else if (tablero[i][j] == 0) {
                     simbolo = ' ';
                     System.out.print("| " + simbolo + " ");
                 }
