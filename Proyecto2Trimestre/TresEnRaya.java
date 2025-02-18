@@ -3,11 +3,16 @@ package Proyecto2Trimestre;
 public class TresEnRaya {
     private int tablero[][] = new int[3][3];
     private int pos = 0;
+    private int fichaJugador1;
+    private int fichaJugador2;
 
     public TresEnRaya() {
         iniciar();
     }
 
+    public void eligeFichero1(){
+
+    }
     public void mueveJugador1(int pos) {
         while (movimientoValido(pos)) {
             tablero[(pos - 1) / 3][(pos - 1) % 3] = 1;
@@ -56,7 +61,7 @@ public class TresEnRaya {
     public boolean quedanMovimientos() {
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
-                if (tablero[i][j] != ' ') {
+                if (tablero[i][j] == 0) {
                     return true;
                 }
 
@@ -70,29 +75,25 @@ public class TresEnRaya {
         if (tablero[0][0] == 1 && tablero[0][1] == 1 && tablero[0][2] == 1) {
             return true;
         }
-        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) {
-            return true;
-        }
-        if (tablero[0][0] == 1 && tablero[0][1] == 1 && tablero[0][2] == 1) {
-            return true;
-        }
-        if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1) {
-            return true;
-        }
-        if (tablero[0][2] == 1 && tablero[1][1] == 1 && tablero[2][0] == 1) {
-            return true;
-        }
-        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) {
-            return true;
-        }
-        if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[2][1] == 1) {
+        if (tablero[1][0] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1) {
             return true;
         }
         if (tablero[2][0] == 1 && tablero[2][1] == 1 && tablero[2][2] == 1) {
             return true;
         }
-        if (tablero[1][0] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1) {
-            Eganador1++;
+        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) {
+            return true;
+        }
+        if (tablero[0][2] == 1 && tablero[1][1] == 1 && tablero[2][0] == 1) {
+            return true;
+        }
+        if (tablero[0][0] == 1 && tablero[1][0] == 1 && tablero[2][0] == 1) {
+            return true;
+        }
+        if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[2][1] == 1) {
+            return true;
+        }
+        if (tablero[0][2] == 1 && tablero[1][2] == 1 && tablero[2][2] == 1) {
             return true;
         }
         return false;
@@ -104,61 +105,54 @@ public class TresEnRaya {
         if (tablero[0][0] == 2 && tablero[0][1] == 2 && tablero[0][2] == 2) {
             return true;
         }
-        if (tablero[0][0] == 2 && tablero[1][1] == 2 && tablero[2][2] == 2) {
-            return true;
-        }
-        if (tablero[0][0] == 2 && tablero[0][1] == 2 && tablero[0][2] == 2) {
-            return true;
-        }
-        if (tablero[0][1] == 2 && tablero[1][1] == 2 && tablero[1][2] == 2) {
-            return true;
-        }
-        if (tablero[0][2] == 2 && tablero[1][1] == 2 && tablero[2][0] == 2) {
-            return true;
-        }
-        if (tablero[0][0] == 2 && tablero[1][1] == 2 && tablero[2][2] == 2) {
-            return true;
-        }
-        if (tablero[0][1] == 2 && tablero[1][1] == 2 && tablero[2][1] == 2) {
+        if (tablero[1][0] == 2 && tablero[1][1] == 2 && tablero[1][2] == 2) {
             return true;
         }
         if (tablero[2][0] == 2 && tablero[2][1] == 2 && tablero[2][2] == 2) {
             return true;
         }
-        if (tablero[1][0] == 2 && tablero[1][1] == 2 && tablero[1][2] == 2) {
-            Eganador1++;
+        if (tablero[0][0] == 2 && tablero[1][1] == 2 && tablero[2][2] == 2) {
+            return true;
+        }
+        if (tablero[0][2] == 2 && tablero[1][1] == 2 && tablero[2][0] == 2) {
+            return true;
+        }
+        if (tablero[0][0] == 2 && tablero[1][0] == 2 && tablero[2][0] == 2) {
+            return true;
+        }
+        if (tablero[0][1] == 2 && tablero[1][1] == 2 && tablero[2][1] == 2) {
+            return true;
+        }
+        if (tablero[0][2] == 2 && tablero[1][2] == 2 && tablero[2][2] == 2) {
             return true;
         }
         return false;
     }
+
     public boolean ganadorOrdenador1() {
         int Eganador1 = 0;
         if (tablero[0][0] == 1 && tablero[0][1] == 1 && tablero[0][2] == 1) {
             return true;
         }
-        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) {
-            return true;
-        }
-        if (tablero[0][0] == 1 && tablero[0][1] == 1 && tablero[0][2] == 1) {
-            return true;
-        }
-        if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1) {
-            return true;
-        }
-        if (tablero[0][2] == 1 && tablero[1][1] == 1 && tablero[2][0] == 1) {
-            return true;
-        }
-        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) {
-            return true;
-        }
-        if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[2][1] == 1) {
+        if (tablero[1][0] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1) {
             return true;
         }
         if (tablero[2][0] == 1 && tablero[2][1] == 1 && tablero[2][2] == 1) {
             return true;
         }
-        if (tablero[1][0] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1) {
-            Eganador1++;
+        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) {
+            return true;
+        }
+        if (tablero[0][2] == 1 && tablero[1][1] == 1 && tablero[2][0] == 1) {
+            return true;
+        }
+        if (tablero[0][0] == 1 && tablero[1][0] == 1 && tablero[2][0] == 1) {
+            return true;
+        }
+        if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[2][1] == 1) {
+            return true;
+        }
+        if (tablero[0][2] == 1 && tablero[1][2] == 1 && tablero[2][2] == 1) {
             return true;
         }
         return false;

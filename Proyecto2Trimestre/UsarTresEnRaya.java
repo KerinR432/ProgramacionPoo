@@ -28,12 +28,12 @@ public class UsarTresEnRaya {
             if (opción == 1) {
                 boolean jugando = true;
                 iniciar();
-                while (jugando == true) {
+                while (jugando) {
                     if (quedanCasillas()) {
                         System.out.println("mueve jugador 1");
                         pos1 = in.nextInt();
                         mueveJugador1(pos1);
-                        if (ganaJugador1() == true) {
+                        if (ganaJugador1()) {
                             System.out.println("Has ganado!");
                             ganando1++;
                             jugando = false;
@@ -44,11 +44,11 @@ public class UsarTresEnRaya {
                         esEmpate();
                         jugando = false;
                     }
-                    if (quedanCasillas() == true && jugando) {
+                    if (quedanCasillas() && jugando) {
                         System.out.println("Mueve jugador 2");
                         pos2 = in.nextInt();
                         mueveJugador2(pos2);
-                        if (ganaJugador2() == true) {
+                        if (ganaJugador2()) {
                             System.out.println("Has ganado!");
                             ganando2++;
                             jugando = false;
@@ -97,9 +97,7 @@ public class UsarTresEnRaya {
     public static boolean movimientoValido(int pos) {
 
         if (pos >= 1 && pos <= 9) {
-            if (tablero[pos - 1] == ' ') {
-                return true;
-            }
+            return tablero[pos - 1] == ' ';
         }
         return false;
     }
@@ -129,7 +127,7 @@ public class UsarTresEnRaya {
                 return true;
 
             }
-            if (ganaJugador1() == true) {
+            if (ganaJugador1()) {
                 return false;
             }
         }
@@ -159,7 +157,7 @@ public class UsarTresEnRaya {
 
     public static boolean esEmpate() {
 
-        if (!quedanCasillas() && ganaJugador1() == false) {
+        if (!quedanCasillas() && !ganaJugador1()) {
             System.out.println("Es Empate");
             empate++;
             return true;
@@ -231,13 +229,9 @@ public class UsarTresEnRaya {
             if (tablero[6] == 'o' && tablero[7] == 'o' && tablero[8] == 'o') {
                 return true;
             }
-            if (tablero[3] == 'o' && tablero[4] == 'o' && tablero[5] == 'o') {
-                return true;
-            }
+            return tablero[3] == 'o' && tablero[4] == 'o' && tablero[5] == 'o';
 
         }
-
-        return false;
 
     }
 }
