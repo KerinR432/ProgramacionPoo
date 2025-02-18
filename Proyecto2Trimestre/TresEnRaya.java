@@ -1,8 +1,8 @@
 package Proyecto2Trimestre;
 
 public class TresEnRaya {
-    private int tablero[][] = new int[3][3];
-    private int pos = 0;
+    private final int[][] tablero = new int[3][3];
+    private final int pos = 0;
     private int fichaJugador1;
     private int fichaJugador2;
 
@@ -10,9 +10,15 @@ public class TresEnRaya {
         iniciar();
     }
 
-    public void eligeFichero1(){
-
+    public void eligeFichero1() {
+        if (fichaJugador1 == 1) {
+            fichaJugador1 = 1;
+        }
+        if (fichaJugador1 == 2) {
+            fichaJugador1 = 2;
+        }
     }
+
     public void mueveJugador1(int pos) {
         while (movimientoValido(pos)) {
             tablero[(pos - 1) / 3][(pos - 1) % 3] = 1;
@@ -50,10 +56,7 @@ public class TresEnRaya {
 
     public boolean movimientoValido(int pos) {//averiguar si quedan movimiento válido...
         if (pos >= 1 && pos <= 9) {
-            if (tablero[(pos - 1) / 3][(pos - 1) % 3] == 0) {
-                return true;
-            }
-            return false;
+            return tablero[(pos - 1) / 3][(pos - 1) % 3] == 0;
         }
         return false;
     }
@@ -93,10 +96,7 @@ public class TresEnRaya {
         if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[2][1] == 1) {
             return true;
         }
-        if (tablero[0][2] == 1 && tablero[1][2] == 1 && tablero[2][2] == 1) {
-            return true;
-        }
-        return false;
+        return tablero[0][2] == 1 && tablero[1][2] == 1 && tablero[2][2] == 1;
 
     }
 
@@ -123,10 +123,7 @@ public class TresEnRaya {
         if (tablero[0][1] == 2 && tablero[1][1] == 2 && tablero[2][1] == 2) {
             return true;
         }
-        if (tablero[0][2] == 2 && tablero[1][2] == 2 && tablero[2][2] == 2) {
-            return true;
-        }
-        return false;
+        return tablero[0][2] == 2 && tablero[1][2] == 2 && tablero[2][2] == 2;
     }
 
     public boolean ganadorOrdenador1() {
@@ -152,10 +149,7 @@ public class TresEnRaya {
         if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[2][1] == 1) {
             return true;
         }
-        if (tablero[0][2] == 1 && tablero[1][2] == 1 && tablero[2][2] == 1) {
-            return true;
-        }
-        return false;
+        return tablero[0][2] == 1 && tablero[1][2] == 1 && tablero[2][2] == 1;
 
     }
 
