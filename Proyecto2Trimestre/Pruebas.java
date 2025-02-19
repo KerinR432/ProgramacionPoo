@@ -9,7 +9,7 @@ public class Pruebas {
 
     public static void main(String[] args) {
         TresEnRaya juego = new TresEnRaya();
-        int opcion = 0, contJ1 = 0, contJ2 = 0, contJ12Em = 0, opcion3;
+        int opcion = 0, contJ1 = 0, contJ2 = 0, contJ12Em = 0, opcion3,fichaElegida=0;
         int pos = 0, contO1 = 0, contO2 = 0, contO12Em = 0, contIPartidas = 0;
         do {
             mostrarMenu();
@@ -23,6 +23,11 @@ public class Pruebas {
                         boolean jugada = true;
                         switch (opcion3) {
                             case 1:
+                                System.out.println("Elige tu ficha");
+                                System.out.println(" 1) 'X'\n"+"2) 'O'");
+                                fichaElegida=scanner.nextInt();
+                                juego.eligeFichero1(fichaElegida);
+                                juego.eligeFichero2(fichaElegida);
                                 while (jugada) {
                                     if (juego.quedanMovimientos() && !juego.ganaJugador2()) {
                                         do {
@@ -110,6 +115,11 @@ public class Pruebas {
                                 }
                                 break;
                             case 3:
+                                System.out.println("Elige tu ficha");
+                                System.out.println(" 1) 'X'\n"+"2) 'O'");
+                                fichaElegida=scanner.nextInt();
+                                juego.eligeFichero1(fichaElegida);
+                                juego.eligeFichero2(fichaElegida);
                                 while (jugada) {
                                     if (juego.quedanMovimientos() && !juego.ganaJugador2()) {
                                         do {
@@ -211,7 +221,7 @@ public class Pruebas {
 
     public static void estadisticasDeJugadores(int contJ1, int contJ2, int contJ12Em, int contIPartidas) {
         System.out.println("El Jugador (1) ha ganado: " + contJ1);
-        System.out.println("El jugador (2) ha ganado; " + contJ2);
+        System.out.println("El jugador (2) ha ganado: " + contJ2);
         System.out.println("Los Jugadores empatarón unas: " + contJ12Em);
         System.out.println("Las partidas jugadas son: " + contIPartidas);
     }
@@ -225,7 +235,7 @@ public class Pruebas {
 
     public static void mostrarMenu() {
         System.out.println("Elige una opción ");
-        System.out.println("1) Entrar en los Modos de  juego ");
+        System.out.println("1) Entrar en los Modos de juego ");
         System.out.println("2) Mostrar estadisticas");
         System.out.println("3) Salir");
     }
