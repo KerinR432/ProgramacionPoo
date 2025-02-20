@@ -4,7 +4,7 @@ public class Profesor extends  Empleador{
     private String numeroDepartamento;
 
     public Profesor(String nombre, String apellidos, String dni, String estadoCivil, String añoIncorporación, int numDespacho, String numeroDepartamento) {
-        super(nombre, apellidos, dni, estadoCivil, añoIncorporación, numDespacho);
+        super(nombre, apellidos, dni, estadoCivil, añoIncorporación, numDespacho);//LLAMAN AL METODO CONSTRUCTOR DE LA CLASE PADRE.
         this.numeroDepartamento = numeroDepartamento;
     }
     //GETTERS
