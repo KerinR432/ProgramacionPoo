@@ -8,8 +8,8 @@ public class EmpleadoPorComision extends Empleado{
         this.numeroVentas = numeroVentas;
         this.comisionVentas = comisionVentas;
     }
-    public void setSalarioComision(){
-        Salario=((numeroVentas*comisionVentas));
+    public double getSalario(){
+        return((numeroVentas*comisionVentas));
     }
 
     /**
@@ -17,10 +17,10 @@ public class EmpleadoPorComision extends Empleado{
      */
     @Override
     public String toString() {
-        return "EmpleadoPorComision{" +
+        return super.toString()+ "EmpleadoPorComision{" +
                 "numeroVentas=" + numeroVentas +
                 ", comisionVentas=" + comisionVentas +
-                ", Salario=" + Salario +
+                ", Salario Final=" + getSalarioBase() +
                 '}';
     }
 }

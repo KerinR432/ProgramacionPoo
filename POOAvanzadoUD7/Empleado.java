@@ -11,11 +11,37 @@ public class Empleado {
         this.salarioBase = salarioBase;
     }
 
-    public double getSalarioBase() {
+    public double getSalario() {
         return salarioBase;
     }
     public void setSalarioBase(double salarioBase){
         this.salarioBase=salarioBase;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getNumSeguridadS() {
+        return numSeguridadS;
+    }
+    //setters
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setNumSeguridadS(String numSeguridadS) {
+        this.numSeguridadS = numSeguridadS;
     }
 
     @Override

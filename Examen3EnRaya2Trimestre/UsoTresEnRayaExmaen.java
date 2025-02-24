@@ -10,8 +10,8 @@ public class UsoTresEnRayaExmaen {
     static Random random = new Random();
 
     public static void main(String[] args) {
-        TresEnRaya juego = new TresEnRaya();
-        int opcion = 0, contJ1 = 0, contJ2 = 0, contJ12Em = 0, opcion3,fichaElegida=0;
+        TresEnRayaExamen juego = new TresEnRayaExamen();
+        int opcion = 0, contJ1 = 0, contJ2 = 0, contJ12Em = 0, opcion3, fichaElegida = 0;
         int pos = 0, contO1 = 0, contO2 = 0, contO12Em = 0, contIPartidas = 0;
         do {
             mostrarMenu();
@@ -26,8 +26,8 @@ public class UsoTresEnRayaExmaen {
                         switch (opcion3) {
                             case 1:
                                 System.out.println("Elige tu ficha");
-                                System.out.println(" 1) 'X'\n"+"2) 'O'");
-                                fichaElegida=scanner.nextInt();
+                                System.out.println(" 1) 'X'\n" + "2) 'O'");
+                                fichaElegida = scanner.nextInt();
                                 juego.eligeFichero1(fichaElegida);
                                 juego.eligeFichero2(fichaElegida);
                                 while (jugada) {
@@ -78,14 +78,14 @@ public class UsoTresEnRayaExmaen {
                                 break;
                             case 2:
                                 while (jugada) {
-                                    if (juego.quedanMovimientos() && !juego.ganaJugador2()) {
+                                    if (juego.quedanMovimientos() && !juego.ganaMaquina2()) {
                                         System.out.println("La maquina (1) esta jugando: ");
                                         do {
                                             pos = random.nextInt(9) + 1;
                                         } while (!juego.movimientoValido(pos) && juego.quedanMovimientos());
 
                                         juego.mueveOrdenador1(pos);
-                                        if (juego.ganaJugador1()) {
+                                        if (juego.ganaMaquina1()) {
                                             System.out.println("Maquina (1) ha ganado");
                                             contJ1++;
                                             jugada = false;
@@ -96,14 +96,14 @@ public class UsoTresEnRayaExmaen {
                                         contO12Em++;
                                         jugada = false;
                                     }
-                                    if (juego.quedanMovimientos() && !juego.ganaJugador1()) {
+                                    if (juego.quedanMovimientos() && !juego.ganaMaquina1()) {
                                         System.out.println("La maquina (2) esta jugando: ");
                                         do {
                                             pos = random.nextInt(9) + 1;
                                         } while (!juego.movimientoValido(pos) && juego.quedanMovimientos());
 
                                         juego.mueveOrdenador2(pos);
-                                        if (juego.ganaJugador2()) {
+                                        if (juego.ganaMaquina2()) {
                                             System.out.println("Maquina (2) ha ganado");
                                             contJ2++;
                                             jugada = false;
@@ -117,11 +117,8 @@ public class UsoTresEnRayaExmaen {
                                 }
                                 break;
                             case 3:
-                                System.out.println("Elige tu ficha");
-                                System.out.println(" 1) 'X'\n"+"2) 'O'");
-                                fichaElegida=scanner.nextInt();
-                                juego.eligeFichero1(fichaElegida);
-                                juego.eligeFichero2(fichaElegida);
+                                juego.eligeFichero1(1);
+                                juego.eligeFichero2(2);
                                 while (jugada) {
                                     if (juego.quedanMovimientos() && !juego.ganaJugador2()) {
                                         do {
@@ -131,7 +128,6 @@ public class UsoTresEnRayaExmaen {
                                                 System.out.println("Posición inválida o ya ocupada, intenta de nuevo.");
                                             }
                                         } while (!juego.movimientoValido(pos) && juego.quedanMovimientos());
-
                                         juego.mueveJugador1(pos);
                                         if (juego.ganaJugador1()) {
                                             System.out.println("Jugador 1 ha ganado");

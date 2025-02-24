@@ -11,6 +11,9 @@ public class TresEnRayaExamen {
     }
 
     public void eligeFichero1(int fichaEliegida) {
+        /**if (fichaEliegida!=1 && fichaEliegida!=2) {
+            fichaJugador1=1;
+        }*/
         if (fichaEliegida == 1) {
             fichaJugador1 = 1;
         }
@@ -54,9 +57,18 @@ public class TresEnRayaExamen {
         }
     }
 
-    public void mueveOrdenador2(int pos) {
+    public void mueveOrdenador2J(int pos) {
         if (movimientoValido(pos)) {
             tablero[(pos - 1) / 3][(pos - 1) % 3] = fichaJugador2;
+            DibujaTablero();
+        } else {
+            System.out.println("numero no valido escribre otro");
+        }
+    }
+
+    public void mueveOrdenador2(int pos) {
+        if (movimientoValido(pos)) {
+            tablero[(pos - 1) / 3][(pos - 1) % 3] = 2;
             DibujaTablero();
         } else {
             System.out.println("numero no valido escribre otro");
@@ -133,6 +145,59 @@ public class TresEnRayaExamen {
             return true;
         }
         return tablero[0][2] == fichaJugador2 && tablero[1][2] == fichaJugador2 && tablero[2][2] == fichaJugador2;
+    }
+
+    public boolean ganaMaquina1() {
+        int Eganador1 = 0;
+        if (tablero[0][0] == 1 && tablero[0][1] == 1 && tablero[0][2] == 1) {
+            return true;
+        }
+        if (tablero[1][0] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1) {
+            return true;
+        }
+        if (tablero[2][0] == 1 && tablero[2][1] == 1 && tablero[2][2] == 1) {
+            return true;
+        }
+        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) {
+            return true;
+        }
+        if (tablero[0][2] == 1 && tablero[1][1] == 1 && tablero[2][0] == 1) {
+            return true;
+        }
+        if (tablero[0][0] == 1 && tablero[1][0] == 1 && tablero[2][0] == 1) {
+            return true;
+        }
+        if (tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[2][1] == 1) {
+            return true;
+        }
+        return false;
+
+    }
+
+    public boolean ganaMaquina2() {
+        int Eganador1 = 0;
+        if (tablero[0][0] == 2 && tablero[0][1] == 2 && tablero[0][2] == 2) {
+            return true;
+        }
+        if (tablero[1][0] == 2 && tablero[1][1] == 2 && tablero[1][2] == 2) {
+            return true;
+        }
+        if (tablero[2][0] == 2 && tablero[2][1] == 2 && tablero[2][2] == 2) {
+            return true;
+        }
+        if (tablero[0][0] == 2 && tablero[1][1] == 2 && tablero[2][2] == 2) {
+            return true;
+        }
+        if (tablero[0][2] == 2 && tablero[1][1] == 2 && tablero[2][0] == 2) {
+            return true;
+        }
+        if (tablero[0][0] == 2 && tablero[1][0] == 2 && tablero[2][0] == 2) {
+            return true;
+        }
+        if (tablero[0][1] == 2 && tablero[1][1] == 2 && tablero[2][1] == 2) {
+            return true;
+        }
+        return false;
     }
 
 
