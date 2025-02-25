@@ -20,7 +20,7 @@ public class EmpleadoPorComision extends Empleado{
         return super.toString()+ "EmpleadoPorComision{" +
                 "numeroVentas=" + numeroVentas +
                 ", comisionVentas=" + comisionVentas +
-                ", Salario Final=" + getSalarioBase() +
+                ", Salario Final=" + getSalario() +
                 '}';
     }
 }

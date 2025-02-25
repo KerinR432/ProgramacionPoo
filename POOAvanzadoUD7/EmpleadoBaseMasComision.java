@@ -11,7 +11,7 @@ public class EmpleadoBaseMasComision extends Empleado {
 
     @Override
     public double getSalario() {
-        return super.getSalarioBase()+(numeroVentas*comisionVentas);
+        return super.getSalario()+(numeroVentas*comisionVentas);
     }
 
     @Override
@@ -19,7 +19,7 @@ public class EmpleadoBaseMasComision extends Empleado {
         return super.toString()+ "EmpleadoBaseMasComision{" +
                 "comisionVentas=" + comisionVentas +
                 ", numeroVentas=" + numeroVentas +
-                ", Salario Final=" + getSalarioBase() +
+                ", Salario Final=" + getSalario() +
                 '}';
     }
 }
