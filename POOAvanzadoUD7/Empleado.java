@@ -2,7 +2,7 @@ package POOAvanzadoUD7;
 
 public class Empleado {
     private String nombre, apellido, numSeguridadS;
-    private double salarioBase;
+    protected double salarioBase;
 
     public Empleado(String nombre, String apellido, String numSeguridadS, double salarioBase) {
         this.nombre = nombre;
