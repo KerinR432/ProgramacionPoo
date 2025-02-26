@@ -10,19 +10,35 @@ public class UsoEmpleado {
         int cont = 0;
         int opcion = Menu();
 
-        switch (opcion) {
-            case 1:
-                empleados[cont] = pideDatosDeEmpeladoPorComsion(empleados, cont);
-                cont++;
-                break;
-            case 2:
-                empleados[cont] = pideDatosDeEmpleadoBaseMasComsion();
-                break;
-            case 3:
 
-            default:
+        do {
+            switch (opcion) {
+                case 1:
+                    if (cont < empleados.length) {
 
-        }
+                        empleados[cont] = pideDatosDeEmpeladoPorComsion(empleados, cont);
+                        cont++;
+                    }
+                    break;
+                case 2:
+                    if (cont < empleados.length) {
+
+                        empleados[cont] = pideDatosDeEmpleadoBaseMasComsion();
+                        cont++;
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i<cont;i++){
+                        System.out.println(empleados[i]);
+                    }
+                case 4:
+                    System.out.println("Has salido");
+                    break;
+                default:
+                    System.out.println("opción no valida");
+
+            }
+        } while (opcion != 4);
     }
 
     public static EmpleadoPorComision pideDatosDeEmpeladoPorComsion(Empleado[] empleados, int cont) {
@@ -50,7 +66,8 @@ public class UsoEmpleado {
         System.out.println("Que tipo de Empleado eres?");
         System.out.println("1. Empleado por comision");
         System.out.println("2. Empleado base más comsión");
-        System.out.println("3. Salir");
+        System.out.println("3. Dame datos de emplados");
+        System.out.println("4. Salir");
         int opcion = Integer.parseInt(scanner.nextLine());
         return opcion;
     }
@@ -75,7 +92,7 @@ public class UsoEmpleado {
         System.out.println("Comsión por venta: ");
         comisonVentas = Double.parseDouble(scanner.nextLine());
         System.out.println("Salario Base: ");
-        salarioBase=Double.parseDouble(scanner.nextLine());
+        salarioBase = Double.parseDouble(scanner.nextLine());
         return new EmpleadoBaseMasComision(nombre, apellido, numSss, comisonVentas, salarioBase, ventas);
     }
 }

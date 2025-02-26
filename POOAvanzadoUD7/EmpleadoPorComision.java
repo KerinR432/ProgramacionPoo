@@ -17,10 +17,9 @@ public class EmpleadoPorComision extends Empleado{
      */
     @Override
     public String toString() {
-        return super.toString()+ "EmpleadoPorComision{" +
+        return super.toString()+ "EmpleadoPorComision" +
                 "numeroVentas=" + numeroVentas +
                 ", comisionVentas=" + comisionVentas +
-                ", Salario Final=" + getSalario() +
-                '}';
+                ", Salario Final=" + getSalario();
     }
 }
