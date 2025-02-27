@@ -31,6 +31,6 @@ public class Locales extends Inmuebles {
     @Override
     public String toString() {
         return super.toString() + " Locales " +
-                " numeroVentanas: " + numeroVentanas+" Precio Final "+getPrecioBase()+" Euros ";
+                " numeroVentanas: " + numeroVentanas+" Precio Final "+getPrecioBase()+" € ";
     }
 }

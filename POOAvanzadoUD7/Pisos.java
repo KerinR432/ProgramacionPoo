@@ -11,8 +11,17 @@ public class Pisos extends Inmuebles {
     }
 
     public double getPrecioBase() {
+        double precioFinal=super.getPrecioBase();
+        if (getMetrosCuadrados() > 50) {
+            return precioFinal += (super.getPrecioBase()*0.01);
+        }
+        if (super.getEdadImueble() < 15) {
+            precioFinal =- (super.getPrecioBase() * 0.01);
+        } else if (super.getEdadImueble() > 15) {
+            precioFinal =- (super.getPrecioBase() * 0.02);
+        }
         if (numerosDePisos > 3) {
-            return super.getPrecioBase() + ((super.getPrecioBase() * 3) / 100);
+            return precioFinal += ((super.getPrecioBase() * 3) / 100);
         }
         return getPrecioBase();
     }
@@ -20,9 +29,9 @@ public class Pisos extends Inmuebles {
 
     @Override
     public String toString() {
-        return super.toString() + "Pisos" +
-                "pisoConcreto=" + pisoConcreto +
-                ", numerosDePisos=" + numerosDePisos +
-                getPrecioBase() + " Euros";
+        return super.toString() + "Pisos " +
+                "pisoConcreto: " + pisoConcreto +
+                ", numerosDePisos: " + numerosDePisos + " el precio Final es: "+
+                getPrecioBase() + " € ";
     }
 }

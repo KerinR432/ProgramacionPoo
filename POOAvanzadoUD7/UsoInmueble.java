@@ -9,7 +9,7 @@ public class UsoInmueble {
         System.out.println(muebles1);
         Locales local1 = new Locales("Sol",60,1500,"Malo",20,5);
          System.out.println(local1);
-         Pisos piso1 = new Pisos("Sol",40,150,"Buneo",15,5,5);
+         Pisos piso1 = new Pisos("Sol",40,1500,"Buneo",15,5,5);
         System.out.println(piso1);
     }
 }

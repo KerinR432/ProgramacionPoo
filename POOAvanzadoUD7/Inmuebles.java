@@ -64,7 +64,7 @@ public class Inmuebles {
         return "Inmuebles" +
                 "direccion: '" + direccion + '\'' +
                 ", metrosCuadrados: " + metrosCuadrados + " m²" +
-                ", precioBase: " + precioBase + " Euros" +
+                ", precioBase: " + precioBase + " € " +
                 ", estadoInmueble=: " + estadoInmueble + '\'' +
                 ", edadImueble: " + edadImueble + " Años ";
     }
