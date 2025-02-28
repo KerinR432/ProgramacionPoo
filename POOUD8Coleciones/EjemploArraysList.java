@@ -19,6 +19,6 @@ public class EjemploArraysList {
         //borramos un elemento por indice
         numero.remove(numero.size()-1);//remove asi eleminamos.
         System.out.println(numero);
+        
     }
 }
-zº
