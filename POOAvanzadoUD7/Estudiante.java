@@ -21,4 +21,7 @@ public class Estudiante extends SerHumano {
         }
         return true;
     }
+    public String toString(){
+        return super.toString()+"La Calificación de este estudiante es: "+calificacion;
+    }
 }

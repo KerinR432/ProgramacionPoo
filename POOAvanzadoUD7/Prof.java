@@ -16,6 +16,18 @@ public class Prof extends SerHumano {
             }
         }
     }
+    //getters
+
+
+    public String getMateria() {
+        return materia;
+    }
+    //setter
+
+
+    public void setMateria(String materia) {
+        this.materia = materia;
+    }
 
     public boolean falta(){
         Random random = new Random();
@@ -28,5 +40,8 @@ public class Prof extends SerHumano {
             return true;
         }
         return true;
+    }
+    public String toString(){
+        return super.toString()+" La Materia de este Profesor es: "+materia;
     }
 }
