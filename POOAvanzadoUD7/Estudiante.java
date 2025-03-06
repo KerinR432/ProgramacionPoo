@@ -15,6 +15,7 @@ public class Estudiante extends SerHumano {
         if (num < 5){
             return false;
         }
+
         if (num > 5){
             return true;
         }

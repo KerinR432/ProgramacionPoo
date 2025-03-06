@@ -16,6 +16,7 @@ public class Prof extends SerHumano {
             }
         }
     }
+
     public boolean falta(){
         Random random = new Random();
         int num=random.nextInt(11);
