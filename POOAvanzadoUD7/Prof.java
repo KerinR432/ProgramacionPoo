@@ -3,7 +3,7 @@ package POOAvanzadoUD7;
 import java.util.Random;
 
 public class Prof extends SerHumano {
-    private String materia;
+    private String materia="";
     public Prof(String nombre, String edad, String sexo,String materia) {
         super(nombre, edad, sexo);
         comprobarMateria();

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Aula2 {
     private  int identificador,numeroMaxEs;
-    private String materia;
+    private String materia="";
     private ArrayList <Estudiante> estudiantes;
         private Prof profesor;
     public Aula2(int identificador,int numeroMaxEs,String materia){
