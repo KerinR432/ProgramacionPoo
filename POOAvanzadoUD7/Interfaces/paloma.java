@@ -6,4 +6,21 @@ public class paloma extends Aves{
         super(especies, vuela);
         this.color=color;
     }
+    //setters
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+    //getters
+
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +"paloma{" +
+                "color='" + color + '\'' +
+                '}';
+    }
 }

@@ -7,4 +7,19 @@ public class PalomaMensajera extends paloma {
         super(especies, vuela, color);
         this.velocidad=velocidad;
     }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ "PalomaMensajera{" +
+                "velocidad=" + velocidad +
+                '}';
+    }
 }
