@@ -17,8 +17,20 @@ public abstract class Figura {
     }
 
     //metodo abstracto
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass() || this == null) {
+            return false;
+        }
+        return true;
+    }
     public abstract double obtenerArea();
     public abstract double obtenerVolumen();
+
+
 
     @Override
     public String toString() {

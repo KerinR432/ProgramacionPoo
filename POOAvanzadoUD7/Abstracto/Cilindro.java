@@ -19,6 +19,19 @@ public class Cilindro extends Figura {
     public double obtenerVolumen() {
         return altura * c.obtenerVolumen();
     }
+    public boolean equals(Object obj) {
+        if (!super.equals(obj)){
+            return false;
+        }
+        Cilindro p = (Cilindro) obj;
+        if (p.obtenerArea()!=obtenerArea()){
+            return false;
+        }
+        if (p.obtenerVolumen()!=obtenerVolumen()){
+            return false;
+        }
+        return true;
+    }
 
     @Override
     public String toString() {

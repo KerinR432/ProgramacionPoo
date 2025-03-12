@@ -46,4 +46,16 @@ public class Punto extends Figura {
                 ", y= " + y +" el volumen es "+obtenerVolumen()+" el area es: "+obtenerArea()+
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!super.equals(obj)){
+            return false;
+        }
+        Punto p = (Punto)obj;
+        if (p.x!=x || p.y!=y){
+            return false;
+        }
+        return true;
+    }
 }

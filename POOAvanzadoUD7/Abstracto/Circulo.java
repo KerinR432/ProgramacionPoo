@@ -29,6 +29,16 @@ public class Circulo extends Figura {
     public double obtenerVolumen() {
         return 0;
     }
+    public boolean equals(Object obj) {
+        if (!super.equals(obj)){
+            return false;
+        }
+        Circulo p = (Circulo) obj;
+        if (p.obtenerArea()!=obtenerArea()){
+            return false;
+        }
+        return true;
+    }
 
     @Override
     public String toString() {
