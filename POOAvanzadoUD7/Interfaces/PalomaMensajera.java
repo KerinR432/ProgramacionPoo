@@ -1,14 +1,14 @@
 package POOAvanzadoUD7.Interfaces;
 
-public class PalomaMensajera extends paloma {
-    private int velocidad;
+public class PalomaMensajera extends paloma implements Comunicador {
+    private double velocidad;
 
-    public PalomaMensajera(String especies, String vuela, String color,int velocidad) {
-        super(especies, vuela, color);
+    public PalomaMensajera(String especies, boolean vuela, String color,double velocidad) {
+        super("Mensjaera", true, "gris");
         this.velocidad=velocidad;
     }
 
-    public int getVelocidad() {
+    public double getVelocidad() {
         return velocidad;
     }
 
@@ -21,5 +21,10 @@ public class PalomaMensajera extends paloma {
         return super.toString()+ "PalomaMensajera{" +
                 "velocidad=" + velocidad +
                 '}';
+    }
+
+    @Override
+    public void enviaMensaje(String mensaje) {
+        System.out.println("Soy una Paloma "+Comunicador.CTE+ "y llevo el mensaje "+mensaje);
     }
 }

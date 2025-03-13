@@ -1,11 +1,11 @@
 package POOAvanzadoUD7.Interfaces;
 
-public class Telegrafo extends Reliquia {
+public class Telegrafo extends Reliquia implements Comunicador {
     private String codigo;
 
-    public Telegrafo(int year,String codigo) {
+    public Telegrafo(int year, String codigo) {
         super(year);
-        this.codigo=codigo;
+        this.codigo = codigo;
     }
 
     public String getCodigo() {
@@ -18,6 +18,11 @@ public class Telegrafo extends Reliquia {
 
     @Override
     public String toString() {
-        return super.toString()+ "Telegrafo{}";
+        return super.toString() + "Telegrafo{}";
+    }
+
+    @Override
+    public void enviaMensaje(String mensaje) {
+        System.out.println("Soy una telegrafo " + getCodigo() + "y llevo el mensaje " + mensaje);
     }
 }

@@ -1,6 +1,6 @@
 package POOAvanzadoUD7.Interfaces;
 
-public class TelefonoMovil extends Telefono {
+public class TelefonoMovil extends Telefono implements Comunicador {
     private String modelo;
 
     public TelefonoMovil(String numero,String modelo) {
@@ -21,5 +21,10 @@ public class TelefonoMovil extends Telefono {
         return super.toString()+"TelefonoMovil{" +
                 "modelo='" + modelo + '\'' +
                 '}';
+    }
+
+    @Override
+    public void enviaMensaje(String mensaje) {
+        System.out.println("mi telefono es "+getNumero()+ "y el mensaje es "+mensaje);
     }
 }

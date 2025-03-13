@@ -1,9 +1,10 @@
 package POOAvanzadoUD7.Interfaces;
 
 public class Aves {
-    private String especies,vuela;
+    private String especies;
+    private boolean vuela;
 
-    public Aves(String especies, String vuela) {
+    public Aves(String especies, boolean vuela) {
         this.especies = especies;
         this.vuela = vuela;
     }
@@ -13,17 +14,10 @@ public class Aves {
         this.especies = especies;
     }
 
-    public void setVuela(String vuela) {
-        this.vuela = vuela;
-    }
     //getters
 
     public String getEspecies() {
         return especies;
-    }
-
-    public String getVuela() {
-        return vuela;
     }
 
     @Override
