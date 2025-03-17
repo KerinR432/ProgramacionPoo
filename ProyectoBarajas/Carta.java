@@ -23,16 +23,18 @@ public class Carta {
         return palo;
     }
 
-    public void NombreNumero(){
-        String[] nombre = {"as","dos","tres","cuatro","cinco","seis","siete","Caballo","Rey","sota"};
+    public String NombreNumero(){
+        String[] carta = {"as","dos","tres","cuatro","cinco","seis","siete","Caballo","Rey","sota"};
+        return carta[numero-1];
 
     }
-    public void NombrePalo(){
+    public String NombrePalo(){
        String[] palo = {"oro","copa","espada","bastos"};
+       return palo[this.palo];
     }
-    public void  NombreDeCarta(){
+    public String  NombreDeCarta(){
+        return NombreNumero()+NombrePalo();
 
     }
-
 
 }
