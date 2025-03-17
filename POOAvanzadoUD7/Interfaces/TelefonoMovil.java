@@ -3,6 +3,10 @@ package POOAvanzadoUD7.Interfaces;
 public class TelefonoMovil extends Telefono implements Comunicador {
     private String modelo;
 
+    public TelefonoMovil(){
+        super("12341414141");
+        modelo="Sansumg";
+    }
     public TelefonoMovil(String numero,String modelo) {
         super(numero);
         this.modelo=modelo;

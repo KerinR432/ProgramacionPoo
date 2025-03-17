@@ -2,8 +2,7 @@ package ProyectoBarajas;
 
 public class Carta {
     //declaramos las dos variables que tiene esta clasa, que es numero de carta y los palos de esa carta
-    private final int numero;
-    private final int palo;
+    private int numero,palo;
 
     //creamos los constructores de la clase carta
     public Carta(int numero, int palo) {
@@ -29,7 +28,7 @@ public class Carta {
 
     }
     public void NombrePalo(){
-
+       String[] palo = {"oro","copa","espada","bastos"};
     }
     public void  NombreDeCarta(){
 

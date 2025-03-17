@@ -3,6 +3,10 @@ package POOAvanzadoUD7.Interfaces;
 public class Telegrafo extends Reliquia implements Comunicador {
     private String codigo;
 
+    public Telegrafo(){
+        super(1900);
+        codigo="morse";
+    }
     public Telegrafo(int year, String codigo) {
         super(year);
         this.codigo = codigo;
