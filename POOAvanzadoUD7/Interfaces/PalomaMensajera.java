@@ -3,6 +3,10 @@ package POOAvanzadoUD7.Interfaces;
 public class PalomaMensajera extends paloma implements Comunicador {
     private double velocidad;
 
+    public PalomaMensajera(){
+        super("Mensajera", true, "gris");
+        this.velocidad=25;
+    }
     public PalomaMensajera(String especies, boolean vuela, String color,double velocidad) {
         super("Mensjaera", true, "gris");
         this.velocidad=velocidad;
