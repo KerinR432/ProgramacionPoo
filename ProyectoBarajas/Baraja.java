@@ -44,6 +44,7 @@ public class Baraja {
         return lista_cartas.remove(0);
     }
     public void InsertaCartaFinal(int id_carta){
+
     }
     public void InsertaCartaFinal(Carta c){
 
