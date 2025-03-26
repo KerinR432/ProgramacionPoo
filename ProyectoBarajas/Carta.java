@@ -1,7 +1,7 @@
 package ProyectoBarajas;
 
 public class Carta {
-    //declaramos las dos variables que tiene esta clasa, que es numero de carta y los palos de esa carta
+    //declaramos las dos variables que tiene esta class, que es número de carta y los palos de esa carta
     private int numero,palo;
 
     //creamos los constructores de la clase carta
@@ -10,9 +10,13 @@ public class Carta {
         this.palo = palo;
     }
     //creamos otro constructor pero en este caso vacio
-    public Carta() {
-        numero=0;
-        palo=0;
+    public Carta(int id) {
+        if (id%10==0){
+            numero=id;
+        }
+        if (id%4==0){
+            palo=id;
+        }
     }
     //creamos los getters de esta clase
     public int getNumero() {
@@ -38,7 +42,7 @@ public class Carta {
         return NombreNumero()+" de "+NombrePalo();
 
     }
-    //este metodo nos servira para mas adelante es para dar un valor al modo de juego tute
+    //este metodo nos servira para más adelante es para dar un valor al modo de juego tute
     public int ValorTute(){
         if(numero>=8){
             return numero-6;
