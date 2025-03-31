@@ -1,5 +1,4 @@
 package POOAvanzadoUD7.Interfaces;
-
 //programamos el patron de Diseño creacional: Factory Method
 //son soluciones estandar a problemas recurrende
 //"sirven para no reinvitar la rueda"
