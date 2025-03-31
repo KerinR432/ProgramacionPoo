@@ -13,7 +13,8 @@ public class VentanaSuma extends JFrame implements ActionListener {
 
     public VentanaSuma(){
         super("Suma");
-        this.setBounds(350,100,250,250);
+        this.setBounds(0,0,250,250);
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ContruirVentana();
         this.setVisible(true);
