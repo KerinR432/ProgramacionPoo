@@ -7,13 +7,16 @@ import java.util.Random;
 
 public class VentanitaAdivinar extends JFrame implements ActionListener {
     private JPanel panel;
-    private JLabel etq1, etq2;
-    private JButton jugar, mayor, menor, acertar;
+    private JLabel etq1;
+    private JButton mayor, menor, acertar;
     private JTextField numero;
     private   Boolean ganar;
+    private int max, min, numGenerado;
 
     public VentanitaAdivinar() {
         super("Adivina!!!");
+        min = 1;
+        max = 100;
         this.setBounds(0, 0, 500, 450);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,30 +27,25 @@ public class VentanitaAdivinar extends JFrame implements ActionListener {
     private void construirPanel() {
         panel = new JPanel();
 
-        etq1 = new JLabel("Introduce un numero");
+        etq1 = new JLabel();
+        numGenerado=generaNUmero();
+        etq1.setText("Creo que el numero es:"+numGenerado);
         panel.add(etq1);
         numero = new JTextField(5);
-        panel.add(numero);
 
 
-        etq2 = new JLabel();
-        panel.add(etq2);
-
-        jugar = new JButton("Empezar partida");
-        panel.add(jugar);
-        jugar.addActionListener(this);
-        mayor = new JButton("El numero es mayor");
+        mayor = new JButton("Mayor");
         mayor.addActionListener(this);
 
         panel.add(mayor);
 
 
-        menor = new JButton("El numero es menor");
+        menor = new JButton("Menor");
         menor.addActionListener(this);
         panel.add(menor);
 
 
-        acertar = new JButton("Has acertado");
+        acertar = new JButton("Igual");
         panel.add(acertar);
         acertar.addActionListener(this);
 
@@ -56,25 +54,34 @@ public class VentanitaAdivinar extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int max=100;
-        ganar = false;
+        //ganar = false;
         if (e.getSource()==acertar) {
-            etq2.setText("Has acertado");
-            ganar = true;
+            etq1.setText("Has acertado");
+            menor.setEnabled(false);
+            mayor.setEnabled(false);
+            acertar.setText("Empezar");
+            //ganar = true;
         }
 
-        Random random = new Random();
-        int num = random.nextInt(100);
+
         if(e.getSource()==menor){
-            num = random.nextInt(100);
-            etq2.setText(String.valueOf((max-num+1)/2));
+            max = numGenerado;
+            numGenerado=generaNUmero();
+            etq1.setText("Creo que el numero es:"+numGenerado);
+
         }
         if (e.getSource()==mayor) {
-            max = random.nextInt(100);
-            etq2.setText(String.valueOf((num+max+1)/2));
+            min = numGenerado;
+            numGenerado=generaNUmero();
+            etq1.setText("Creo que el numero es:"+numGenerado);
 
         }
 
+    }
+    private int generaNUmero(){
+        int num = (max-min)/2 + min;
+        System.out.println("Min: "+ min +" Max: "+ max +" num "+ num);
+        return num;
     }
 
 }
