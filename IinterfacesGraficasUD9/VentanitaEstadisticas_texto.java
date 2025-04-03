@@ -1,8 +1,10 @@
 package IinterfacesGraficasUD9;
 
 import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class VentanitaEstadisticas_texto extends JFrame {
+public class VentanitaEstadisticas_texto extends JFrame implements KeyListener {
 
     private JPanel panel;
     private JLabel etq1,etq2,etq3,etq4,etq5,etq6;
@@ -52,4 +54,18 @@ public class VentanitaEstadisticas_texto extends JFrame {
         this.add(panel);
     }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }
