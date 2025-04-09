@@ -1,18 +1,18 @@
-package POOBasicoUD6;
+package PooExcepcionesUD10;
 
-import PooExcepcionesUD10.ExceptuonBook;
-
-public class Libro {
+public class Libro2 {
     private String titulo;
     private String autor;
     private int numeroP;
     private int calificacion;
 
-    public Libro(String titulo, String autor, int numeroP, int calificacion) {
+    public Libro2(String titulo, String autor, int numeroP, int calificacion) throws ExceptuonBook {
         this.titulo = titulo;
         this.autor = autor;
         this.numeroP = numeroP;
-        setCalificacion(calificacion);
+        validarCalificacion(calificacion);
+
+        this.calificacion = calificacion;
     }
 
     //GETTERS
@@ -50,11 +50,12 @@ public class Libro {
     }
 
     public void setCalificacion(int calificacion) throws ExceptuonBook {
+        validarCalificacion( calificacion);
+            calificacion =  calificacion;
+    }
+    private void validarCalificacion(int calificacion) throws ExceptuonBook{
         if (calificacion <= 0 || calificacion > 10) {
-            calificacion = 0;
             throw new ExceptuonBook("Error, la calificación debe de estar compredido desde 1 a 10");
-        } else {
-            this.calificacion = calificacion;
         }
     }
 }
