@@ -12,7 +12,7 @@ public class EscribirNumerosAletorios {
             numAle = new FileWriter("NumerosAle.txt");
             for (int i = 0; i < 10; i++) {
                 Random random = new Random();
-                String n = ""+random.nextInt(10);
+                String n = ""+random.nextInt(100);
                 numAle.write(n+"\n");
             }
             numAle.close();
