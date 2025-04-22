@@ -39,7 +39,7 @@ public class VentanaTraducir extends JFrame implements ActionListener {
         panel.add(text2);
 
         bt1 = new JButton();
-        bt1.setText("Español");
+        bt1.setText("Español → Inglés");
         bt1.addActionListener(this);
         panel.add(bt1);
 
@@ -51,31 +51,15 @@ public class VentanaTraducir extends JFrame implements ActionListener {
         this.add(panel);
     }
 
+    private void diccionario() {
+        FileReader dic;
+
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
-        FileReader leer;
-        ArrayList<String> traduccion = new ArrayList<>();
-        String texto = "";
-        String separar=",";
-            try {
-                leer = new FileReader("palabras.txt");
-                int car = 0;
-                while(car!=-1){
-                    car = leer.read();
-                    for (int i = 0; i < traduccion.size(); i++) {
-                    traduccion.add(car+"");
-                    }
-                     texto = String.valueOf(traduccion);
-                }
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
+
         if (e.getSource() == bt2){
-            for(String i : traduccion){
-                texto = String.valueOf(traduccion);
 
-
-            }
         }
     }
 }
