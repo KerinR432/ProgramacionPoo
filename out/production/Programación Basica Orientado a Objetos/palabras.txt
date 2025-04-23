@@ -2,3 +2,12 @@ patata, potato
 mar, sea
 delfín, dolphin
 madre, mother
+perro, dog
+ave, bird
+arbol, tree
+pez, fish
+raton, mouse
+españa, spain
+gato, cat
+mascota, pet
+cielo, sky

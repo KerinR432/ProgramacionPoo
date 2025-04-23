@@ -72,8 +72,13 @@ public class MiVentanitablocNota extends JFrame implements ActionListener {
                 int car = 0;
                 while ((car=leer.read())!=-1){
                     texto+=(char)car;
-                    cuadroTxt.setText(texto);
                 }
+                /*while (car!=-1){
+                    car=leer.read();
+                    if(car!=-1)
+                        texto+=(char)car;
+                }*/
+                    cuadroTxt.setText(texto);
             } catch (FileNotFoundException ex) {
                 System.out.println(ex.getMessage());
             } catch (IOException ex) {
