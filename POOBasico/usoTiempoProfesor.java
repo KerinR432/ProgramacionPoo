@@ -6,5 +6,6 @@ public class usoTiempoProfesor {
         TiempoProfesor tiempo2=new TiempoProfesor(5);
         TiempoProfesor tiempo3=new TiempoProfesor(5,12);
         System.out.println(tiempo.formatoTiempo());
+        System.out.println("Hola");
     }
 }
