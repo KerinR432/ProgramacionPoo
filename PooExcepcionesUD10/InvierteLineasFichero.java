@@ -1,4 +1,4 @@
-package PooExcepcionesUD10;
+/*package PooExcepcionesUD10;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -31,3 +31,4 @@ public class InvierteLineasFichero {
 
     }
 }
+*/
