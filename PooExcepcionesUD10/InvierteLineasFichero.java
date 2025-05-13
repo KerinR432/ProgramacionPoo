@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 /*package PooExcepcionesUD10;
+=======
+/*
+package PooExcepcionesUD10;
+>>>>>>> 32d96daedfd953c60b2895677efdb43a7de6bfe7
 
 import java.io.FileReader;
 import java.io.FileWriter;
