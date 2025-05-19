@@ -1,6 +1,8 @@
 package IinterfacesGraficasUD9;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,6 +28,11 @@ public class VentanitaCambioVen extends JFrame implements ActionListener {
 
     private void construirPanel(){
         panel = new JPanel();
+        panel.setBackground(new Color(245, 245, 250));
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setBorder(new EmptyBorder(30, 50, 50, 50));
+
+
 
         et1 = new JLabel();
         et1.setText("Cambia de pestaña");

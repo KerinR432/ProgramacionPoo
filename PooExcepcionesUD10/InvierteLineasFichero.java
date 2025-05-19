@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*package PooExcepcionesUD10;
 =======
 /*
