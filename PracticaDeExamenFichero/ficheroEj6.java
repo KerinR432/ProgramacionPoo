@@ -20,7 +20,7 @@ public class ficheroEj6 {
             entrada = new FileReader(nombreF+".txt");
             while (cad !=-1){
                 cad = entrada.read();
-                tra =""+(char)cad;
+                tra +=(char)cad;
                 System.out.println(tra);
             }
 

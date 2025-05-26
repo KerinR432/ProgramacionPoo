@@ -11,11 +11,15 @@ public class EjemploExcepcion {
     public static void main(String[] args) {
         try {
             //ponemos la Instrucción que peude lanzar una excepción
+            System.out.println("**************************");
             System.out.println("El resultado es: "+divide(5,2));
             System.out.println("El resultado es: "+divide(5,0));
+            System.out.println("**************************");
 
         }catch (ArithmeticException e){
+            System.out.println("**************************");
             System.out.println(e.getMessage());
+            System.out.println("**************************");
         }
     }
 

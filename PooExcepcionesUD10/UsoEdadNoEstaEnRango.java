@@ -10,9 +10,13 @@ public class UsoEdadNoEstaEnRango {
     }
     public static void main(String[] args) {
        try {
+           System.out.println("**********************");
            validarEdad(-1);
+           System.out.println("**********************");
        } catch (ExcepcionEdadNoEstaEnRango e) {
+           System.out.println("**********************");
            System.out.println(e.getMessage());
+           System.out.println("**********************");
        }
     }
 }
