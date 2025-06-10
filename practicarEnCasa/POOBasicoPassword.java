@@ -21,7 +21,7 @@ public class POOBasicoPassword {
         String numeros = "1234567890";
         int contNum = 0;
         int contlet = 0;
-        if (contraseña.contains(letras+)) {
+        if (contraseña.contains(letras)) {
             contlet++;
             if (contraseña.contains(numeros)) {
                 contNum++;
